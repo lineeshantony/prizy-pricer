@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+                      http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+	version="2.0">
+	<persistence-unit name="PrizyPricerOpenJPAConfiguration" transaction-type="RESOURCE_LOCAL">
+		
+		<class>com.prizy.pricer.entities.Product</class>
+		<class>com.prizy.pricer.entities.ProductSurvey</class>
+
+		<properties>
+			<property name="openjpa.ConnectionURL" value="jdbc:mysql://localhost:3306/mydbtest" />
+			<property name="openjpa.ConnectionDriverName" value="com.mysql.jdbc.Driver" />
+			<property name="openjpa.jdbc.DBDictionary" value="org.apache.openjpa.jdbc.sql.MySQLDictionary" />
+			<property name="openjpa.DataCache" value="true" />
+			<property name="openjpa.QueryCache" value="true" />
+			<property name="openjpa.ConnectionUserName" value="root" />
+			<property name="openjpa.ConnectionPassword" value="admin" />
+			<property name="openjpa.DynamicEnhancementAgent" value="true" />
+			<property name="openjpa.RuntimeUnenhancedClasses" value="supported" />
+			<property name="openjpa.Log" value="SQL=TRACE" />
+
+		</properties>
+	</persistence-unit>
+</persistence>

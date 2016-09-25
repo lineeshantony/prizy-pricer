@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+    <title>Adding a Form</title>
+</h:head>
+<h:body>
+ 
+    <h:form>
+        <h3>Prizy Pricer Product Information</h3>
+        <h:panelGrid columns="3">
+            <h:outputLabel for="productBarCode">Product Bar Code:</h:outputLabel>
+            <h:outputText value="#{productViewer.productBarCode}" id="productBarCode"></h:outputText>
+            <br />
+            <br />
+ 
+            <h:outputLabel for="productDescription">Product Description:</h:outputLabel>
+            <h:outputText value="#{productViewer.productDescription}" id="productDescription"></h:outputText>
+            <br />
+            <br />
+ 
+            <h:outputLabel for="productAveragePrice">Product Average Price:</h:outputLabel>
+            <h:outputText value="#{productViewer.productAveragePrice}" id="productAveragePrice"></h:outputText>
+            <br />
+            <br />
+ 
+            <h:outputLabel for="productLowestPrice">Product Lowest price:</h:outputLabel>
+            <h:outputText value="#{productViewer.productLowestPrice}" id="productLowestPrice"></h:outputText>
+            <br />
+            <br />
+            
+            <h:outputLabel for="productHighestPrice">Product Highest price:</h:outputLabel>
+            <h:outputText value="#{productViewer.productHighestPrice}" id="productHighestPrice"></h:outputText>
+            <br />
+            <br />
+            
+            <h:outputLabel for="productIdealPrice">Product Ideal price:</h:outputLabel>
+            <h:outputText value="#{productViewer.productIdealPrice}" id="productIdealPrice"></h:outputText>
+            <br />
+            <br />
+ 
+        </h:panelGrid>
+        <div>
+        	<h:commandLink action="productlist" value="Back to Product List"></h:commandLink>
+        </div>
+    </h:form>
+</h:body>
+</html>

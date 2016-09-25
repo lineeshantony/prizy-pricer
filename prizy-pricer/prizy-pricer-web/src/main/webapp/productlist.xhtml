@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<title>List of Products</title>
+	<h:outputStylesheet library="css" name="table-style.css" />
+</h:head>
+<h:body>
+
+	<h:form>
+		<h3>Prizy Pricer List of Products</h3>
+		<h:panelGrid columns="3">
+            <h:outputLabel for="searchBarCode">Enter Bar Code:</h:outputLabel>
+            <h:inputText value="#{productList.searchBarCode}" id="searchBarCode"></h:inputText>
+			<h:commandButton id="searchProduct" value="Search Product with BarCode" 
+             		action="#{productList.searchProductsWithBarCode}" />
+        </h:panelGrid>
+		<br/>
+		<br/>
+		<br/>
+		<h:dataTable value="#{productList.products}" var="product"
+			styleClass="product-table" headerClass="product-table-header"
+			rowClasses="product-table-odd-row,product-table-even-row">
+
+			<h:column>
+				<f:facet name="header">Product Bar Code</f:facet>
+    				#{product.productBarCode}
+    			</h:column>
+
+			<h:column>
+				<f:facet name="header">Product Name</f:facet>
+    				#{product.productName}
+    			</h:column>
+
+			<h:column>
+				<f:facet name="header">Product Description</f:facet>
+    				#{product.productDescription}
+    			</h:column>
+    			
+    		<h:column>
+				<h:commandButton id="viewProduct" value="View Product" 
+             		action="#{productList.viewProduct}" >
+             		<f:setPropertyActionListener target="#{productList.selectedBarCode}" value="#{product.productBarCode}" />
+             		</h:commandButton>
+    			</h:column>
+
+		</h:dataTable>
+
+	</h:form>
+</h:body>
+</html>

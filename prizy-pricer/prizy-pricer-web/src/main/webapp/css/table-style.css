@@ -1,0 +1,23 @@
+@CHARSET "ISO-8859-1";
+.product-table{
+	bproduct-collapse:collapse;
+}
+
+.product-table-header{
+	text-align:center;
+	background:none repeat scroll 0 0 #E5E5E5;
+	bproduct-bottom:1px solid #BBBBBB;
+	padding:16px;
+}
+
+.product-table-odd-row{
+	text-align:center;
+	background:none repeat scroll 0 0 #FFFFFFF;
+	bproduct-top:1px solid #BBBBBB;
+}
+
+.product-table-even-row{
+	text-align:center;
+	background:none repeat scroll 0 0 #F9F9F9;
+	bproduct-top:1px solid #BBBBBB;
+}

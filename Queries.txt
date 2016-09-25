@@ -1,0 +1,55 @@
+Create PRODUCT_DM table:
+
+CREATE TABLE IF NOT EXISTS `mydbtest`.`product_dm` (
+  `product_id` INT NOT NULL COMMENT '',
+  `product_bar_cd` VARCHAR(10) NOT NULL COMMENT '',
+  `product_name` VARCHAR(45) NOT NULL COMMENT '',
+  `product_desc` VARCHAR(150) NULL COMMENT '',
+  PRIMARY KEY (`product_id`)  COMMENT '',
+  UNIQUE INDEX `product_bar_cd_UNIQUE` (`product_bar_cd` ASC)  COMMENT '')
+
+
+Create PRODUCT_SURVEY table:
+
+CREATE TABLE IF NOT EXISTS `mydbtest`.`product_survey` (
+  `survey_id` INT NOT NULL COMMENT '',
+  `product_id` INT NOT NULL COMMENT '',
+  `store_id` INT NOT NULL COMMENT '',
+  `product_price` DOUBLE NOT NULL COMMENT '',
+  `notes` VARCHAR(100) NULL COMMENT '',
+  PRIMARY KEY (`survey_id`)  COMMENT '',
+  INDEX `product_bar_cd_idx` (`product_id` ASC)  COMMENT '',
+  CONSTRAINT `product_id`
+    FOREIGN KEY (`product_id`)
+    REFERENCES `mydbtest`.`product_dm` (`product_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+
+
+Insert Queries to PRODUCT_DM table:
+
+insert into mydbtest.product_dm (product_id, product_bar_cd, product_name, product_desc) values (1, '0000000001', 'HP-1 : The Philosophers Stone', 'The Philosophers Stone, Author: JK Rowling, Topseller, Bloomsberry' );
+insert into mydbtest.product_dm (product_id, product_bar_cd, product_name, product_desc) values (2, '0000000002', 'HP-2 : The Chamber of Secrets', 'The Chamber of Secrets, Author: JK Rowling, Topseller, Bloomsberry' );
+insert into mydbtest.product_dm (product_id, product_bar_cd, product_name, product_desc) values (3, '0000000003', 'HP-3 : The Prisoner of Askaban', 'The Prisoner of Askaban, Author: JK Rowling, Topseller, Bloomsberry' );
+insert into mydbtest.product_dm (product_id, product_bar_cd, product_name, product_desc) values (4, '0000000004', 'HP-4 : The Goblet of Fire', 'The Goblet of Fire, Author: JK Rowling, Topseller, Bloomsberry' );
+insert into mydbtest.product_dm (product_id, product_bar_cd, product_name, product_desc) values (5, '0000000005', 'HP-5 : The Order of Phoenix', 'The Order of Phoenix, Author: JK Rowling, Topseller, Bloomsberry' );
+insert into mydbtest.product_dm (product_id, product_bar_cd, product_name, product_desc) values (6, '0000000006', 'HP-6 : The Half Blood Prince', 'The Half Blood Prince, Author: JK Rowling, Topseller, Bloomsberry' );
+insert into mydbtest.product_dm (product_id, product_bar_cd, product_name, product_desc) values (7, '0000000007', 'HP-7 : The Deadly Hallows', 'The Deadly Hallows, Author: JK Rowling, Topseller, Bloomsberry' );
+insert into mydbtest.product_dm (product_id, product_bar_cd, product_name, product_desc) values (8, '0000000008', 'Lockwood and Co: The Screaming Staircase', 'Lockwood and Co: The Screaming Staircase, Author: Jonathan Stroud, Topseller, Random House' );
+insert into mydbtest.product_dm (product_id, product_bar_cd, product_name, product_desc) values (9, '0000000009', 'Lockwood and Co: The Whispering Skull', 'Lockwood and Co: The Whispering Skull, Author: Jonathan Stroud, Topseller, Random House' );
+insert into mydbtest.product_dm (product_id, product_bar_cd, product_name, product_desc) values (10, '0000000010', 'Lockwood and Co: The Hollow Boy', 'Lockwood and Co: The Hollow Boy, Author: Jonathan Stroud, Topseller, Random House' );
+insert into mydbtest.product_dm (product_id, product_bar_cd, product_name, product_desc) values (11, '0000000011', 'Lockwood and Co: The Creeping Shadow', 'Lockwood and Co: The Creeping Shadow, Author: Jonathan Stroud, Topseller, Random House' );
+
+
+Insert Queries to PRODUCT_SURVEY table:
+
+insert into mydbtest.product_survey (survey_id, product_id, store_id, product_price, notes) values (1, 1, 1, 200, 'Random Notes' );
+insert into mydbtest.product_survey (survey_id, product_id, store_id, product_price, notes) values (2, 1, 1, 300, 'Random Notes' );
+insert into mydbtest.product_survey (survey_id, product_id, store_id, product_price, notes) values (3, 1, 1, 500, 'Random Notes' );
+insert into mydbtest.product_survey (survey_id, product_id, store_id, product_price, notes) values (4, 1, 1, 700, 'Random Notes' );
+insert into mydbtest.product_survey (survey_id, product_id, store_id, product_price, notes) values (5, 1, 1, 500, 'Random Notes' );
+insert into mydbtest.product_survey (survey_id, product_id, store_id, product_price, notes) values (6, 1, 1, 250, 'Random Notes' );
+insert into mydbtest.product_survey (survey_id, product_id, store_id, product_price, notes) values (7, 1, 1, 207, 'Random Notes' );
+insert into mydbtest.product_survey (survey_id, product_id, store_id, product_price, notes) values (8, 2, 1, 200, 'Random Notes' );
+insert into mydbtest.product_survey (survey_id, product_id, store_id, product_price, notes) values (9, 2, 1, 400, 'Random Notes' );
+insert into mydbtest.product_survey (survey_id, product_id, store_id, product_price, notes) values (10, 2, 1, 420, 'Random Notes' );
